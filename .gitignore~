@@ -22,19 +22,8 @@
 *.a
 *.lib
 
-# Folders
-<<<<<<< HEAD
-
 # IDE Files
 .idea
 
 # Temporary Files
 hello.cpp
-=======
-Debug/
-.setting/
-
-# IDE Files
-.cproject
-.project
->>>>>>> 224e8f228c4b669b27cb33353fa0eb2be32da43a
