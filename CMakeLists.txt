@@ -11,6 +11,6 @@ link_directories(${GTK3_LIBRARY_DIRS})
 # Add other flags to the compiler
 add_definitions(${GTK3_CFLAGS_OTHER} -std=c++11)
 # Add an executable compiled from hello.c
-set(SOURCE_FILES hello.cpp control/Handlers.cpp control/Handlers.h control/MainFrame.cpp control/MainFrame.h model/Calculator.cpp model/Calculator.h)
+set(SOURCE_FILES hello.cpp control/Handlers.cpp control/Handlers.h view/MainFrame.cpp view/MainFrame.h model/Calculator.cpp model/Calculator.h)
 add_executable(Calculator_ProofOfConcept ${SOURCE_FILES})
 target_link_libraries(Calculator_ProofOfConcept ${GTK3_LIBRARIES})

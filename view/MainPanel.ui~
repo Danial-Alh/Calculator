@@ -5,6 +5,8 @@
   <object class="GtkWindow" id="window1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="hexpand">False</property>
+    <property name="vexpand">False</property>
     <property name="title" translatable="yes">Calculator</property>
     <property name="window_position">center</property>
     <property name="gravity">center</property>
@@ -12,18 +14,22 @@
       <object class="GtkGrid" id="grid1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="margin_left">2</property>
+        <property name="margin_right">2</property>
+        <property name="margin_top">2</property>
+        <property name="margin_bottom">2</property>
+        <property name="row_homogeneous">True</property>
+        <property name="column_homogeneous">True</property>
         <child>
           <object class="GtkButton" id="button1">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">1</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -34,16 +40,14 @@
         </child>
         <child>
           <object class="GtkButton" id="button2">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">2</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -54,16 +58,10 @@
         </child>
         <child>
           <object class="GtkButton" id="button4">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">4</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -74,16 +72,14 @@
         </child>
         <child>
           <object class="GtkButton" id="button5">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">5</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -94,16 +90,14 @@
         </child>
         <child>
           <object class="GtkButton" id="button6">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">6</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">2</property>
@@ -114,16 +108,14 @@
         </child>
         <child>
           <object class="GtkButton" id="button3">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">3</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">2</property>
@@ -133,57 +125,15 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="button*">
-            <property name="label" translatable="yes">button</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
-          </object>
-          <packing>
-            <property name="left_attach">3</property>
-            <property name="top_attach">6</property>
-            <property name="width">1</property>
-            <property name="height">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="button-">
-            <property name="label" translatable="yes">button</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
-          </object>
-          <packing>
-            <property name="left_attach">3</property>
-            <property name="top_attach">7</property>
-            <property name="width">1</property>
-            <property name="height">1</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkButton" id="button7">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">7</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -194,16 +144,15 @@
         </child>
         <child>
           <object class="GtkButton" id="button8">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">8</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="resize_mode">immediate</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -214,16 +163,14 @@
         </child>
         <child>
           <object class="GtkButton" id="button9">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">9</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">2</property>
@@ -233,76 +180,15 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="button/">
-            <property name="label" translatable="yes">button</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
-          </object>
-          <packing>
-            <property name="left_attach">3</property>
-            <property name="top_attach">5</property>
-            <property name="width">1</property>
-            <property name="height">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkTextView" id="expression_view">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
-            <property name="editable">False</property>
-            <property name="cursor_visible">False</property>
-            <property name="accepts_tab">False</property>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">4</property>
-            <property name="width">4</property>
-            <property name="height">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkTextView" id="textview2">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">0</property>
-            <property name="width">4</property>
-            <property name="height">4</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkButton" id="button0">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">0</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
@@ -313,16 +199,14 @@
         </child>
         <child>
           <object class="GtkButton" id="button.">
-            <property name="label" translatable="yes">button</property>
+            <property name="label" translatable="yes">.</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -332,17 +216,15 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="button=">
-            <property name="label" translatable="yes">button</property>
+          <object class="GtkButton" id="executor">
+            <property name="label" translatable="yes">=</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_left">2</property>
-            <property name="margin_right">2</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
           </object>
           <packing>
             <property name="left_attach">2</property>
@@ -352,23 +234,179 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="button+">
-            <property name="label" translatable="yes">button</property>
+          <object class="GtkButton" id="buttonC">
+            <property name="label" translatable="yes">C</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="hexpand">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">4</property>
+            <property name="top_attach">8</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="buttonM">
+            <property name="label" translatable="yes">M</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="hexpand">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">4</property>
+            <property name="top_attach">7</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="buttonMR">
+            <property name="label" translatable="yes">MR</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="hexpand">False</property>
+            <property name="relief">half</property>
+          </object>
+          <packing>
+            <property name="left_attach">4</property>
+            <property name="top_attach">6</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="operator3">
+            <property name="label" translatable="yes">/</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="hexpand">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">4</property>
+            <property name="top_attach">5</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="operator2">
+            <property name="label" translatable="yes">*</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="hexpand">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">5</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="oprator1">
+            <property name="label" translatable="yes">-</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="hexpand">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">6</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="opertor0">
+            <property name="label" translatable="yes">+</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+            <property name="hexpand">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">7</property>
+            <property name="width">1</property>
+            <property name="height">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="expressionField">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="margin_left">1</property>
+            <property name="margin_right">1</property>
+            <property name="margin_top">1</property>
+            <property name="margin_bottom">1</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">4</property>
+            <property name="width">5</property>
+            <property name="height">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
             <property name="margin_left">2</property>
             <property name="margin_right">2</property>
             <property name="margin_top">2</property>
             <property name="margin_bottom">2</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkTextView" id="historyView">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="cursor_visible">False</property>
+                <property name="accepts_tab">False</property>
+              </object>
+            </child>
           </object>
           <packing>
-            <property name="left_attach">3</property>
-            <property name="top_attach">8</property>
-            <property name="width">1</property>
-            <property name="height">1</property>
+            <property name="left_attach">0</property>
+            <property name="top_attach">0</property>
+            <property name="width">5</property>
+            <property name="height">4</property>
           </packing>
         </child>
       </object>
