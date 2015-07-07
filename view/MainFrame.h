@@ -15,23 +15,29 @@ class MainFrame {
 private:
     static const string _view_prefix_path;
 
-    GtkBuilder *builder;
+    static GtkBuilder *builder;
 
-    GObject *window;
+    static GObject *window;
 
-    GObject **_num_button;
-    GObject *_executor_button;
-    GObject **_operator_button;
+    static GObject **_num_button;
+    static GObject *_executor_button;
+    static GObject **_operator_button;
 
-    GObject *_memory_save_button;
-    GObject *_memory_callback_button;
-    GObject *_clear_button;
+    static GObject *_memory_save_button;
+    static GObject *_memory_callback_button;
+    static GObject *_clear_button;
 
-    GObject *_expression_field;
-    GObject *_history_view;
+    static GObject *_expression_field;
+    static GObject *_history_view;
 
     void init();
     void load_view();
+
+    static void on_numpad_clicked(GtkWidget *widget, gpointer   data);
+    static void on_executor_clicked(GtkWidget *widget, gpointer   data);
+    static void on_memory_save_clicked(GtkWidget *widget, gpointer   data);
+    static void on_memory_callback_clicked(GtkWidget *widget, gpointer   data);
+    static void on_clear_clicked(GtkWidget *widget, gpointer   data);
 
 public:
     MainFrame();

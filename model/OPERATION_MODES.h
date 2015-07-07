@@ -1,0 +1,19 @@
+//
+// Created by danial on 7/6/15.
+//
+
+#ifndef CALCULATOR_PROOFOFCONCEPT_HEADER_FILE_H
+#define CALCULATOR_PROOFOFCONCEPT_HEADER_FILE_H
+
+enum OPERATION_MODE
+{
+    ADD = 0,
+    SUB = 1,
+    MULTIPLY = 2,
+    DEVIDE = 3
+};
+
+static const int NUMBER_OF_OPERATIONS = 4;
+
+#endif //CALCULATOR_PROOFOFCONCEPT_HEADER_FILE_H
+
