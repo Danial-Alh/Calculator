@@ -12,5 +12,5 @@ link_directories(${GTK3_LIBRARY_DIRS})
 add_definitions(${GTK3_CFLAGS_OTHER} -std=c++11)
 # Add an executable compiled from hello.c
 set(SOURCE_FILES hello.cpp control/Handlers.cpp control/Handlers.h view/MainFrame.cpp view/MainFrame.h model/Calculator.cpp model/Calculator.h)
-add_executable(Calculator_ProofOfConcept ${SOURCE_FILES} model/Operation.cpp model/Operation.h model/OPERATION_MODES.h)
+add_executable(Calculator_ProofOfConcept ${SOURCE_FILES} model/Operation.cpp model/Operation.h model/MODES.h)
 target_link_libraries(Calculator_ProofOfConcept ${GTK3_LIBRARIES})

@@ -10,10 +10,30 @@ enum OPERATION_MODE
     ADD = 0,
     SUB = 1,
     MULTIPLY = 2,
-    DEVIDE = 3
+    DIVIDE = 3,
+    EXECUTE = 4
+};
+static const int NUMBER_OF_OPERATIONS = 4;
+
+
+enum INPUT_TYPES
+{
+    OPERAND_CHARACTER,
+    OPERATOR,
+    MEMORY_SAVE,
+    MEMORY_READ,
+    CLEAR_HISTORY
+};
+static const int NUMBER_OF_INPUT_TYPES = 5;
+
+enum STATE_MODES
+{
+    FIRST_OPERAND,
+    OPERATOR_SELECT,
+    SECOND_OPERAND,
+    SHOW_RESULT
 };
 
-static const int NUMBER_OF_OPERATIONS = 4;
 
 #endif //CALCULATOR_PROOFOFCONCEPT_HEADER_FILE_H
 
