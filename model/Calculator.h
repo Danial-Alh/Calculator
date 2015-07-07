@@ -15,12 +15,37 @@ public:
     Calculator();
 
 private:
+
+    enum STATE_MODES
+    {
+        FIRST_OPERAND,
+        OPERATOR_SELECT,
+        SECOND_OPERAND,
+        SHOW_RESULT
+    };
+
+    enum INPUT_TYPES
+    {
+        OPERAND_CHARACTER,
+        OPERATOR,
+        MEMORY_SAVE,
+        MEMORY_READ,
+        CLEAR_HISTORY
+    };
+
     static const int NUMBER_OF_STATES,
     NUMBER_OF_INPUT_TYPES ;
 
-    int **automata;
+    static const STATE_MODES automata[][NUMBER_OF_INPUT_TYPES];
     int memory;
     std::vector<Operation> operation_history;
+
+    void automata_init();
+    void go_to_next_state();
+    void execute_operation();
+    void clear_history();
+    void save_in_memory();
+    void read_from_memory();
 protected:
 };
 
