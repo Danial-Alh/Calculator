@@ -216,7 +216,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="executor">
+          <object class="GtkButton" id="operator4">
             <property name="label" translatable="yes">=</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>

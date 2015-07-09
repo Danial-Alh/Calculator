@@ -6,8 +6,11 @@
 #define CACULATOR_MAINFRAME_H
 
 #include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
 #include <string>
-#include "MainFrame.h"
+#include <time.h>
+#include "../control/MODES.h"
+
 using namespace std;
 
 class MainFrame {
@@ -17,10 +20,9 @@ private:
 
     static GtkBuilder *builder;
 
-    static GObject *window;
+    static GObject *_window;
 
     static GObject **_num_button;
-    static GObject *_executor_button;
     static GObject **_operator_button;
 
     static GObject *_memory_save_button;
@@ -38,6 +40,7 @@ private:
     static void on_memory_save_clicked(GtkWidget *widget, gpointer   data);
     static void on_memory_callback_clicked(GtkWidget *widget, gpointer   data);
     static void on_clear_clicked(GtkWidget *widget, gpointer   data);
+    static gboolean on_key_press (GtkWidget *widget, GdkEventKey *event, gpointer user_data);
 
 public:
     MainFrame();

@@ -5,7 +5,7 @@
 #ifndef CALCULATOR_PROOFOFCONCEPT_OPERATION_H
 #define CALCULATOR_PROOFOFCONCEPT_OPERATION_H
 
-#include "MODES.h"
+#include "../control/MODES.h"
 
 class Operation
 {

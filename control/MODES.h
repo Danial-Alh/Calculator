@@ -13,7 +13,7 @@ enum OPERATION_MODE
     DIVIDE = 3,
     EXECUTE = 4
 };
-static const int NUMBER_OF_OPERATIONS = 4;
+static const int NUMBER_OF_OPERATIONS = 5;
 
 
 enum INPUT_TYPES
