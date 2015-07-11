@@ -69,3 +69,24 @@ void Operation::calculate_result()
     }
 
 }
+
+std::string Operation::to_string()
+{
+    std::string opt;
+            switch( operation_mode )
+            {
+                case OPERATION_MODE::ADD:
+                    opt = "+";
+                    break;
+                case OPERATION_MODE::SUB:
+                    opt = "+";
+                    break;
+                case OPERATION_MODE::MULTIPLY:
+                    opt = "+";
+                    break;
+                case OPERATION_MODE::DIVIDE:
+                    opt = "+";
+                    break;
+            }
+    return std::to_string(operand[0]) + " " + opt + " " + std::to_string(operand[1]) + " = " + std::to_string(result);
+}

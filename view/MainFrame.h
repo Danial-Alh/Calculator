@@ -10,12 +10,16 @@
 #include <string>
 #include <time.h>
 #include "../control/MODES.h"
+#include "../control/Handlers.h"
 
 using namespace std;
 
 class MainFrame {
 
 private:
+
+    static Handlers *handler;
+
     static const string _view_prefix_path;
 
     static GtkBuilder *builder;
@@ -34,6 +38,7 @@ private:
 
     void init();
     void load_view();
+    static string get_expression_field_text();
 
     static void on_numpad_clicked(GtkWidget *widget, gpointer   data);
     static void on_executor_clicked(GtkWidget *widget, gpointer   data);
@@ -43,9 +48,13 @@ private:
     static gboolean on_key_press (GtkWidget *widget, GdkEventKey *event, gpointer user_data);
 
 public:
-    MainFrame();
+    MainFrame(Handlers *handler);
+    void clear_expression_field();
+    void clear_all();
 
-protected:
+    void show_number(string number);
+
+    void set_history(string history_text);
 };
 
 #endif //CACULATOR_MAINFRAME_H

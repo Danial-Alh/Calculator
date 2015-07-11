@@ -5,6 +5,9 @@
 #ifndef CALCULATOR_PROOFOFCONCEPT_HEADER_FILE_H
 #define CALCULATOR_PROOFOFCONCEPT_HEADER_FILE_H
 
+#include <bits/stringfwd.h>
+#include <string>
+
 enum OPERATION_MODE
 {
     ADD = 0,
@@ -31,8 +34,30 @@ enum STATE_MODES
     FIRST_OPERAND,
     OPERATOR_SELECT,
     SECOND_OPERAND,
-    SHOW_RESULT
+    RESULT
 };
+
+class ViewReaction
+{
+public:
+    enum REACTION
+    {
+        CLEAR_EXPRESSION_FIELD,
+        SHOW_NUMBER,
+        CLEAR_ALL,
+        NOTHING
+    } reaction;
+int number;
+bool update_history;
+std::string history_text;
+
+    ViewReaction()
+    {
+        number = 0;
+        update_history = false;
+    }
+};
+
 
 
 #endif //CALCULATOR_PROOFOFCONCEPT_HEADER_FILE_H

@@ -6,6 +6,7 @@
 #define CALCULATOR_PROOFOFCONCEPT_OPERATION_H
 
 #include "../control/MODES.h"
+#include <string>
 
 class Operation
 {
@@ -25,6 +26,7 @@ public:
     void setSecondOperand(int number);
 
     void calculate_result();
+    std::string to_string();
 private:
     int operand[2];
     OPERATION_MODE operation_mode;

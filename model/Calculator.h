@@ -13,8 +13,7 @@ class Calculator
 {
 public:
     Calculator();
-    void proceed_to_next_state(INPUT_TYPES input_type, OPERATION_MODE operation_mode, int number);
-
+    ViewReaction* proceed_to_next_state(INPUT_TYPES input_type, OPERATION_MODE operation_mode, int number);
 private:
 
 
@@ -27,10 +26,12 @@ private:
     Operation *current_operation;
     int memory;
 
-    bool execute_operation(OPERATION_MODE mode, int i);
-    void clear_history();
-    void save_in_memory(int i);
-    void read_from_memory();
+    ViewReaction* on_character_insertion(INPUT_TYPES types);
+    ViewReaction* execute_operation(OPERATION_MODE mode, int i, INPUT_TYPES types);
+    ViewReaction* clear_history(INPUT_TYPES types);
+    ViewReaction* save_in_memory(int i, INPUT_TYPES types);
+    ViewReaction* read_from_memory(INPUT_TYPES types);
+    std::string to_string_history();
 protected:
 };
 

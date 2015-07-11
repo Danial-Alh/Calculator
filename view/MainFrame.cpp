@@ -17,7 +17,9 @@ GObject *MainFrame::_history_view;
 
 
 
-MainFrame::MainFrame() {
+MainFrame::MainFrame(Handlers *handler) {
+    this->handler = handler;
+
     _num_button = new GObject*[10];
     _operator_button = new GObject*[NUMBER_OF_OPERATIONS];
     gtk_init(NULL, NULL);
@@ -25,14 +27,13 @@ MainFrame::MainFrame() {
     load_view();
     init();
 
-    gtk_widget_show_all( GTK_WIDGET(_window));
+    gtk_widget_show_all(GTK_WIDGET(_window));
     gtk_main();
 }
 
 void MainFrame::init()
 {
     _window = gtk_builder_get_object( builder, "window1");
-    g_signal_connect (_window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
     for( int i = 0; i < 10; i++)
     {
         char obj_name[] = { 'b' , 'u', 't', 't', 'o', 'n' , '0'+i, 0 } ;
@@ -52,7 +53,7 @@ void MainFrame::init()
     _expression_field = gtk_builder_get_object( builder, "expressionField");
     _history_view = gtk_builder_get_object(builder, "historyView");
 
-
+    g_signal_connect (_window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
     g_signal_connect (_memory_save_button, "clicked", G_CALLBACK(MainFrame::on_memory_save_clicked), NULL);
     g_signal_connect (_memory_callback_button, "clicked", G_CALLBACK(MainFrame::on_memory_callback_clicked), NULL);
     g_signal_connect (_clear_button, "clicked", G_CALLBACK(MainFrame::on_clear_clicked), NULL);
@@ -66,24 +67,12 @@ void MainFrame::load_view()
     gtk_builder_add_from_file( builder, (_view_prefix_path +"MainPanel.ui").c_str() , NULL);
 }
 
-
-//    gtk_text_buffer_set_text( gtk_text_view_get_buffer(GTK_TEXT_VIEW(_expression_field)) , "salam", -1);
-//    GtkTextIter iter ;
-//    gtk_text_buffer_get_end_iter (gtk_text_view_get_buffer(GTK_TEXT_VIEW(_expression_field)) ,&iter);
-//    gtk_text_buffer_insert( gtk_text_view_get_buffer(GTK_TEXT_VIEW(_expression_field)),&iter, "     0",-1);
-
-
-//    GtkTextBuffer *buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(_expression_field));
-//    GtkTextMark *mark;
-//    GtkTextIter iter;
-//    mark = gtk_text_buffer_get_insert (buffer);
-//    gtk_text_buffer_get_iter_at_mark (buffer, &iter, mark);
-//    gtk_text_buffer_insert (buffer, &iter, " 0000", -1);void MainFrame::on_numpad_clicked(GtkWidget* widget, gpointer data){
-
 void MainFrame::on_executor_clicked(GtkWidget *widget, gpointer data)
 {
     string expression( gtk_entry_get_text( GTK_ENTRY(_expression_field) ) );
-    g_print( (expression +" CLICKED\toperator clicked:" + gtk_button_get_label(GTK_BUTTON(widget)) + "\n").c_str() );
+    string label(gtk_button_get_label(GTK_BUTTON(widget))) ;
+
+
 }
 
 void MainFrame::on_numpad_clicked(GtkWidget *widget, gpointer data)
@@ -119,11 +108,14 @@ void MainFrame::on_clear_clicked(GtkWidget *widget, gpointer data)
 
 gboolean MainFrame::on_key_press(GtkWidget *widget, GdkEventKey *event, gpointer user_data)
 {
+    OPERATION_MODE mode;
     if( event->keyval >= GDK_KEY_0 && event->keyval <= GDK_KEY_9 )
     {
+        handler->on_charachter_insertion();
         return false;
     }
     else
+    {
         switch (event->keyval)
         {
             case GDK_KEY_Tab:
@@ -131,15 +123,48 @@ gboolean MainFrame::on_key_press(GtkWidget *widget, GdkEventKey *event, gpointer
             case GDK_KEY_BackSpace:
                 return false;
             case GDK_KEY_plus:
+                mode = OPERATION_MODE::ADD;
                 break;
             case GDK_KEY_minus:
+                mode = OPERATION_MODE::SUB;
                 break;
             case GDK_KEY_asterisk:
+                mode = OPERATION_MODE::MULTIPLY;
                 break;
             case GDK_KEY_slash:
+                mode = OPERATION_MODE::DIVIDE;
                 break;
             case GDK_KEY_Return:
+                mode = OPERATION_MODE::EXECUTE;
                 break;
         }
+        handler->on_operator_clicked(mode, get_expression_field_text());
+    }
     return true;
+}
+
+void MainFrame::clear_expression_field()
+{
+    gtk_entry_set_text(GTK_ENTRY(_expression_field), "");
+}
+
+string MainFrame::get_expression_field_text()
+{
+    return string( gtk_entry_get_text(GTK_ENTRY(_expression_field)) );
+}
+
+void MainFrame::clear_all()
+{
+    gtk_entry_set_text(GTK_ENTRY(_expression_field), "");
+    gtk_text_buffer_set_text(gtk_text_view_get_buffer(GTK_TEXT_VIEW(_history_view)), "", -1 );
+}
+
+void MainFrame::show_number(string number)
+{
+    gtk_entry_set_text(GTK_ENTRY(_expression_field), number);
+}
+
+void MainFrame::set_history(string history_text)
+{
+    gtk_text_buffer_set_text(gtk_text_view_get_buffer(GTK_TEXT_VIEW(_history_view)), history_text.c_str(), -1 );
 }
